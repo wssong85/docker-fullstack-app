@@ -21,3 +21,16 @@ after_success:
   - docker push tabliser/docker-frontend
   - docker push tabliser/docker-backend
   - docker push tabliser/docker-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "Docker-Fullstack-App"
+  env: "Dockerfullstackapp-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-255411952215"
+  bucket_path: "elasticbeanstalk-ap-northeast-2-255411952215"
+  on:
+    branch: master
+
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
