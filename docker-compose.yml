@@ -25,28 +25,9 @@ services:
     volumes:
       - /app/node_modules
       - ./backend:/app
-  # aws mysql
     environment:
-      MYSQL_HOST: docker-fullstack-mysql.czu5krkxiseh.ap-northeast-2.rds.amazonaws.com
+      MYSQL_HOST: mysql
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: 12345678
       MYSQL_DATABASE: myapp
       MYSQL_PORT: 3306
-#Error response from daemon: Ports are not available: listen tcp 0.0.0.0:3000: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
-#  Environment named Dockerfullstackapp-env is in an invalid state for this operation. Must be Ready.
-
-
-
-# 내부 도커 mysql
-#  mysql:
-#    build: ./mysql
-#    restart: always
-#    container_name: app_mysql
-#    ports:
-#      - "3306:3306"
-#    volumes:
-#      - ./mysql/sqls:/docker-entrypoint-initdb.d
-#      - ./mysql/mysql_data:/var/lib/mysql
-#    environment:
-#      MYSQL_ROOT_PASSWORD: 1234
-#      MYSQL_DATABASE: myapp
