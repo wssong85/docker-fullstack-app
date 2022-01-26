@@ -21,6 +21,3 @@ after_success:
   - docker push tabliser/docker-frontend
   - docker push tabliser/docker-backend
   - docker push tabliser/docker-nginx
-
-
-
