@@ -12,22 +12,22 @@ script:
   - docker run -e CI=true tabliser/react-test-app npm test
 
 after_success:
-#  - docker build -t tabliser/docker-frontend ./frontend
-#  - docker build -t tabliser/docker-backend ./backend
-#  - docker build -t tabliser/docker-nginx ./nginx
-  - docker build -t smileajw1004/docker-frontend ./frontend
-  - docker build -t smileajw1004/docker-backend ./backend
-  - docker build -t smileajw1004/docker-nginx ./nginx
+  - docker build -t tabliser/docker-frontend ./frontend
+  - docker build -t tabliser/docker-backend ./backend
+  - docker build -t tabliser/docker-nginx ./nginx
+#  - docker build -t smileajw1004/docker-frontend ./frontend
+#  - docker build -t smileajw1004/docker-backend ./backend
+#  - docker build -t smileajw1004/docker-nginx ./nginx
 
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-#  - docker push tabliser/docker-frontend
-#  - docker push tabliser/docker-backend
-#  - docker push tabliser/docker-nginx
-  - docker push smileajw1004/docker-frontend
-  - docker push smileajw1004/docker-backend
-  - docker push smileajw1004/docker-nginx
+  - docker push tabliser/docker-frontend
+  - docker push tabliser/docker-backend
+  - docker push tabliser/docker-nginx
+#  - docker push smileajw1004/docker-frontend
+#  - docker push smileajw1004/docker-backend
+#  - docker push smileajw1004/docker-nginx
 
 
 deploy:
