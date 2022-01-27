@@ -10,7 +10,7 @@
     },
     {
       "name": "backend",
-      "image": "hyemmie/docker-backend",
+      "image": "tabliser/docker-backend",
       "hostname": "backend",
       "essential": false,
       "memory": 128
